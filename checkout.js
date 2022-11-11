@@ -102,17 +102,20 @@ alert(`
 
 // Cálculo del descuento y la presentación del Resumen para el pago.       
 let descuento = 0;
+let comentario = " ";
 
 if (total > 500) {
     descuento = total * 0.2;
+    comentario = "[20%, monto mayor a S/ 500.00]";
 } else if (total > 300) {
     descuento = total * 0.1;
+    comentario = "[10%, monto mayor a S/ 300.00]";
 }
 
 alert(`Resumen para el pago:
 
 Monto total de la compra: S/ ${total}
-Descuento:  S/ ${descuento}
+Descuento:  S/ ${descuento},  ${comentario}
 Monto a pagar: S/ ${total - descuento}
 
 Muchas gracias por su compra.`)
